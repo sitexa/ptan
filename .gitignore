@@ -8,3 +8,4 @@ dist
 build
 .swp
 .ipynb_checkpoints
+ptan.egg-info

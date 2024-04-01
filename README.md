@@ -9,26 +9,15 @@ This library was used in ["Deep Reinforcement Learning Hands-On"](https://www.pa
 
 
 ## Code branches
-The repository is maintained to keep dependency versions up-to-date. 
-This requires efforts and time to test all the examples on new versions, so, be patient.
+The repository is forked from https://github.com/Shmuma/ptan .
 
-The logic is following: there are several branches of the code, corresponding to 
-major pytorch version code was tested. Due to incompatibilities in pytorch and other components,
-**code in the printed book might differ from the code in the repo**.
-
-At the moment, there are the following branches available:
-* `master`: contains the code with the latest pytorch which was tested. At the moment, it is pytorch 1.7.
-* `torch-1.3-book-ed2`: code printed in the book (second edition) with minor bug fixes. Uses pytorch=1.3 which 
-is available only on conda repos.
-* `torch-1.7`: pytorch 1.7. Merged with master.
-
-All the branches uses python 3.7, more recent versions weren't tested.
+The main work is to replace Gym with Gymnasium, upgrade torch version to meet the GPU upgrade to RTX4090。
 
 ## Installation
 
 From sources:
 ```bash
-python setup.py install
+pip install -e . 
 ```
 
 From pypi:
@@ -43,9 +32,9 @@ pip install pip install git+https://github.com/Shmuma/ptan.git
 
 ## Requirements
 
-* [PyTorch](http://pytorch.org/): version 1.1.0 is required
+* [PyTorch](http://pytorch.org/): version 2.2.1 is required
 * [PyTorch Ignite](https://pytorch.org/ignite/): provides extra bindings for ignite
-* [OpenAI Gym](https://gym.openai.com/): ```pip install gym gym[atari]```
+* [OpenAI Gym](https://gym.openai.com/): ```pip install gymnasium gymnasium[atari]```
 * [Python OpenCV](https://pypi.org/project/opencv-python/): ```pip install opencv-python```
 * [TensorBoardX](https://github.com/lanpa/tensorboardX): ```pip install tensorboardX```
 
@@ -55,7 +44,7 @@ To run some of the samples, you will need these modules:
 ```bash
 conda install pytorch torchvision -c pytorch
 pip install tensorboard-pytorch
-pip install gym
+pip install gymnasium
 pip install gym[atari]
 pip install opencv-python
 ```

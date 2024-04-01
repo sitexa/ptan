@@ -61,7 +61,7 @@ class EndOfEpisodeHandler:
                 engine.state.metrics[attr_name] = val
             else:
                 engine.state.metrics[attr_name] *= self._alpha
-                engine.state.metrics[attr_name] += (1-self._alpha) * val
+                engine.state.metrics[attr_name] += (1 - self._alpha) * val
 
 
 class EpisodeFPSHandler:
@@ -96,7 +96,7 @@ class EpisodeFPSHandler:
                 avg_fps = fps
             else:
                 avg_fps *= self._fps_smooth_alpha
-                avg_fps += (1-self._fps_smooth_alpha) * fps
+                avg_fps += (1 - self._fps_smooth_alpha) * fps
             engine.state.metrics[self.AVG_FPS_METRIC] = avg_fps
             engine.state.metrics[self.FPS_METRIC] = fps
         engine.state.metrics[self.TIME_PASSED_METRIC] = time.time() - self._started_ts
@@ -135,4 +135,3 @@ class PeriodicEvents:
         for period, event in self.INTERVAL_TO_EVENT.items():
             if engine.state.iteration % period == 0:
                 engine.fire_event(event)
-
